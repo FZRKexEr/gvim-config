@@ -1,2 +1,2 @@
-# gvim
-我的 gvim 配置
+# gvim-config
+给 windows gvim 用的配置。
