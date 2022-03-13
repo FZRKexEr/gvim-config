@@ -15,7 +15,7 @@ set langmenu=zh_CN.UTF-8
   source $VIMRUNTIME/menu.vim
   source $VIMRUNTIME/delmenu.vim
   set guifont=FixedsysTTF:h18:W600:cANSI:qDRAFT
-  set guioptions-=m
+  " set guioptions-=m
   set guioptions-=T
 endif 
 
