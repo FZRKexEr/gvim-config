@@ -14,7 +14,8 @@ set langmenu=zh_CN.UTF-8
   language message zh_CN.UTF-8
   source $VIMRUNTIME/menu.vim
   source $VIMRUNTIME/delmenu.vim
-  set guifont=FixedsysTTF:h18:W600:cANSI:qDRAFT
+  "set guifont=FixedsysTTF:h18:W600:cANSI:qDRAFT
+  set guifont=UbuntuMono_NF:h18:cANSI:qDRAFT
   " set guioptions-=m
   set guioptions-=T
 endif 
@@ -46,10 +47,13 @@ function! Cmp()
   if &filetype == 'cpp'
     execute "AsyncRun -mode=term -pos=external -save=1 g++ -Wall -O2 -std=c++17 \"$(VIM_FILEPATH)\" && a.exe && del a.exe"
   elseif &filetype == 'python'
-    execute "AsyncRun -mode=term -pos=external -save=1 py \"$(VIM_FILEPATH)\" "
+    execute "AsyncRun -mode=term -pos=external -save=1 pypy \"$(VIM_FILEPATH)\" "
   endif
 
 endfunction
 
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
+let g:ale_linters = {'cpp': ['cc', 'cppcheck']}
+let g:ale_cpp_cc_executable = 'gcc'
 let g:ale_cpp_cc_options = '-Wall -O2 -std=c++17'
+
